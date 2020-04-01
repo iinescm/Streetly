@@ -3,7 +3,7 @@ class CreateComplaints < ActiveRecord::Migration[5.2]
     create_table :complaints do |t|
       t.string :description
       t.string :address
-      t.float :altitude
+      t.float :latitude
       t.float :longitude
 
       t.timestamps
