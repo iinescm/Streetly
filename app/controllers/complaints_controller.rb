@@ -7,7 +7,7 @@ class ComplaintsController < ApplicationController
 
     @complaints = Complaint.all
 
-    @Complaints = Complaint.geocoded # returns flats with coordinates
+    @complaints = Complaint.geocoded # returns flats with coordinates
 
     @markers = @complaints.map do |complaint|
       {
@@ -59,8 +59,6 @@ class ComplaintsController < ApplicationController
   end
 
   def complaint_params
-    params.require(:complaint).permit(:category_id, :description, :address, :user_id)
+    params.require(:complaint).permit(:category_id, :description, :address, :user_id, :city_id)
   end
-end
-
 end
