@@ -7,9 +7,9 @@ class ComplaintsController < ApplicationController
 
     @complaints = Complaint.all
 
-     @Complaints = Complaint.geocoded # returns flats with coordinates
+    @Complaints = Complaint.geocoded # returns flats with coordinates
 
-    @markers = @Complaints.map do |complaint|
+    @markers = @complaints.map do |complaint|
       {
         lat: complaint.latitude,
         lng: complaint.longitude
