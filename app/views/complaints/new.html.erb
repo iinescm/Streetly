@@ -1,1 +1,35 @@
-<h2>HEllO WORLD</h2>
+<div class="row _add-complaint">
+    <div class="col-5">
+      <%= simple_form_for [@complaint] do |f| %>
+      <div class="form-inputs">
+        <%= f.association :category, input_html: { class: "dropdown" }, include_hidden: false %>
+        <%= f.input :description %>
+<!--         < %= f.input :photos, as: :file, input_html: { multiple: true }  %>
+ -->
+        <%= f.input :address %>
+        <%= f.association :city, input_html: { class: "dropdown" }, include_hidden: false %>
+
+
+<!--         < %=  f.input :designer, collection: Good::DESIGNER %>
+        < %=  f.input :category, collection: Good::CATEGORY %>
+         -->
+        <div class="row d-flex justify-content-between">
+          <%= link_to "Cancel", root_path, class: "btn  ml-3 mb-2" %>
+        <%= f.submit "Save", class: "btn btn-outline-secondary mr-3 mb-2" %>
+
+        </div>
+      </div>
+
+
+      <% end %>
+
+<!--       < %= link_to "Cancel", root_path, class: "btn-outline-secondary ml-3 mb-2" %>
+ -->
+    </div>
+
+    <div class="col-1"></div>
+    <div class="col-6">
+<!--       < %= image_tag "online.svg", class:"mx-auto d-block", alt: "online", width: "80%", id:"online" %>
+ -->    </div>
+  </div>
+

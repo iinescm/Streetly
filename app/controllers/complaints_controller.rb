@@ -6,7 +6,6 @@ class ComplaintsController < ApplicationController
   def index
 
     @complaints = Complaint.all
-
     @complaints = Complaint.geocoded # returns flats with coordinates
 
     @markers = @complaints.map do |complaint|
@@ -17,10 +16,18 @@ class ComplaintsController < ApplicationController
 
       }
     end
+
+  end
+
+  def list
+    @complaints = Complaint.where(user_id: user_session)
+    authorize @complaint
   end
 
    def show
     @complaint = Complaint.find(params[:id])
+    authorize @complaint
+
 
   end
 
@@ -33,7 +40,9 @@ class ComplaintsController < ApplicationController
 
   def create
     @complaint = Complaint.new(complaint_params)
-    @complaint.user_id = current_user
+    @complaint.user = current_user
+    authorize @complaint
+
 
     if @complaint.save
       redirect_to root_path, notice: 'Your item was successfully created.'
@@ -43,20 +52,18 @@ class ComplaintsController < ApplicationController
   end
 
   def edit
+    authorize @complaint
+
   end
 
   def update
+    find
     if @complaint.update(complaint_params)
+      authorize @complaint
       redirect_to root_path
     else
       render :edit
     end
-  end
-
-  def destroy
-
-    @complaint.destroy
-    redirect_to root_path
   end
 
  private

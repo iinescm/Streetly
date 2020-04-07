@@ -1,0 +1,17 @@
+<div class="cards">
+    <% @complaints.each do |complaint| %>
+    <div class="">
+      <div class="card-category">
+      </div>
+      <div class="card-infos">
+        <div>
+          <h5><%= complaint.category.name %></h5>
+          <p><%= complaint.description%></p>
+          <h6><em><%= complaint.address%></em></h6>
+          <h6><em><%= complaint.city.name%></em></h6>
+        </div>
+
+        </div>
+      </div>
+    <% end %>
+  </div>

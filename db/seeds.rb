@@ -46,5 +46,6 @@ City.create!(name: 'Almada')
 City.create!(name: 'Braga')
 City.create!(name: 'Grandola')
 
+
 puts "Done"
 
