@@ -1,7 +1,7 @@
 class ComplaintsController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:show, :index, :root]
-  before_action :find, only: [:show, :new, :update, :edit]
+  before_action :find, only: [:show, :new, :edit]
 
   def index
 
@@ -19,16 +19,20 @@ class ComplaintsController < ApplicationController
     end
   end
 
-  def new
-    @complaint = Complaint.new
+   def show
+    @complaint = Complaint.find(params[:id])
+
   end
 
-  def show
+  def new
+    @complaint = Complaint.new
+
+
   end
 
   def create
     @complaint = Complaint.new(complaint_params)
-    @complaint.user = current_user
+    @complaint.user_id = current_user
 
     if @complaint.save
       redirect_to root_path, notice: 'Your item was successfully created.'
