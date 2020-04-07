@@ -1,14 +1,26 @@
-<!-- <div class="row">
-
-  <div class="image">
-     <a class="image" href="#">
-      < %= image_tag "girl.jpg", class: "girl_icon" %>
+<!-- <div class="container">
+<div class="header-container">
+  <div>
+    <a class="image" href="#">
+      < %= image_tag "girl.jpg", class: "girl_top" %>
     </a>
   </div>
-
-  <div class="box-text">
-    <h1 class="header">Report a Neighborhood Problem</h1>
-  <p class="text1">Wherever you are</p>
+  <div class="title-container">
+    <h1 class="title">Report a Neighborhood Problem</h1>
+    <p class="subtitle">Wherever you are</p>
+   < %=link_to "Click here to report a problem", new_complaint_path, class: "newcomplaint" %>
   </div>
+</div>
+ <div class="map-container" id="map"
+     style="width: 100%;
+     height: 450px;"
+     data-markers="< %= @markers.to_json %>"
+     data-mapbox-api-key="< %= ENV['MAPBOX_API_KEY'] %>">
+</div>
+</div>
+ -->
 
-</div> -->
+
+
+
+

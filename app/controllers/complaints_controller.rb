@@ -1,7 +1,7 @@
 class ComplaintsController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:show, :index, :root]
-  before_action :find, only: [:show, :new, :edit]
+  before_action :find, only: [:show, :edit]
 
   def index
 
@@ -26,6 +26,7 @@ class ComplaintsController < ApplicationController
 
   def new
     @complaint = Complaint.new
+    authorize @complaint
 
 
   end
