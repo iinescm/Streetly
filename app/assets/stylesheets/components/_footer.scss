@@ -1,5 +1,5 @@
 .footer {
-  position: relative;
+  position: absolute;
   background: transparent;
   display: flex;
   align-items: center;
@@ -8,8 +8,10 @@
   padding: 0px 50px;
   font-family: Roboto;
   font-style: normal;
-font-weight: 300;
-bottom: 0px;
+  font-weight: 300;
+  bottom: 0px;
+  width: 100%;
+
 }
 .footer-links {
   display: flex;
@@ -32,3 +34,11 @@ bottom: 0px;
   color: #D23333;
 }
 
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 100px;    /* Footer height */
+}

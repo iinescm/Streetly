@@ -12,6 +12,7 @@ Complaint.destroy_all
 User.destroy_all
 Category.destroy_all
 City.destroy_all
+User.destroy_all
 
 
 puts "Creating seeds"
