@@ -16,19 +16,12 @@ class ComplaintsController < ApplicationController
 
       }
     end
-
   end
 
-  def list
-    @complaints = Complaint.where(user_id: user_session)
-    authorize @complaint
-  end
 
-   def show
+  def show
     @complaint = Complaint.find(params[:id])
     authorize @complaint
-
-
   end
 
   def new

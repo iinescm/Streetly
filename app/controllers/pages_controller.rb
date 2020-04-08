@@ -7,12 +7,15 @@ class PagesController < ApplicationController
   end
 
    def index
-      @complaint = Complaint.new
-      @complaints = complaints.all
-    end
+    @complaint = Complaint.new
+    @complaints = complaints.all
+  end
 
   def profile
-    @complaints= Complaint.all
-    #@complaints = Complaints.where(user_id: current_user.id)
+    @complaints = Complaint.where(user: current_user)
+  end
+
+  def reports
+    @complaints = complaints.all
   end
 end
