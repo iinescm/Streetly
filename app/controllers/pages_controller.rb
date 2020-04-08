@@ -16,6 +16,6 @@ class PagesController < ApplicationController
   end
 
   def reports
-    @complaints = complaints.all
+    @complaints = Complaint.all
   end
 end
