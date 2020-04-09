@@ -1,3 +1,21 @@
 <h2>Show reports in your city</h2>
 
 <h3>Select your city </h3>
+
+
+<div class="row justify-content-center">
+<% @complaints.each do |complaint| %>
+<div class="card card-report" style="width: 18rem;">
+  <div class="card-body">
+
+    <h5 class="card-title"><%= complaint.category.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= complaint.address%></h6>
+    <h6 class="card-subtitle mb-2 text-muted"><%= complaint.city.name%></h6>
+    <p class="card-text"><%= complaint.description%></p>
+    <a class="card-link"> <%= link_to "See details", complaint_path(complaint) %></a>
+
+  </div>
+
+</div>
+<% end %>
+</div>

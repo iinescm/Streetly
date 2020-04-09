@@ -12,8 +12,7 @@
     <h6 class="card-subtitle mb-2 text-muted"><%= complaint.address%></h6>
     <h6 class="card-subtitle mb-2 text-muted"><%= complaint.city.name%></h6>
     <p class="card-text"><%= complaint.description%></p>
-<!--     <a href="complaint_path(complaint)" class="card-link">See details</a>
- -->    <a class="card-link"> <%= link_to "See details", complaint_path(complaint) %></a>
+    <a class="card-link"> <%= link_to "See details", complaint_path(complaint) %></a>
 
   </div>
 
