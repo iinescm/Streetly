@@ -4,15 +4,10 @@
       <div class="form-inputs">
         <%= f.association :category, input_html: { class: "dropdown" }, include_hidden: false %>
         <%= f.input :description %>
-<!--         < %= f.input :photos, as: :file, input_html: { multiple: true }  %>
- -->
+        <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
         <%= f.input :address %>
         <%= f.association :city, input_html: { class: "dropdown" }, include_hidden: false %>
 
-
-<!--         < %=  f.input :designer, collection: Good::DESIGNER %>
-        < %=  f.input :category, collection: Good::CATEGORY %>
-         -->
         <div class="row d-flex justify-content-between">
           <%= link_to "Cancel", root_path, class: "btn  ml-3 mb-2" %>
         <%= f.submit "Save", class: "btn btn-outline-secondary mr-3 mb-2" %>

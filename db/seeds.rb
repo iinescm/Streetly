@@ -17,8 +17,6 @@ User.destroy_all
 
 puts "Creating seeds"
 
-User.create!(first_name: "Inês", last_name: "Marmelo", email: "fines.c.marmelo@gmail.com", password: "123456")
-
 Category.create!(name: 'Abandoned Vehicles')
 Category.create!(name: 'Bus Stops')
 Category.create!(name: 'Car Parking')
