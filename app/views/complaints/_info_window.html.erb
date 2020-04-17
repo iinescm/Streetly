@@ -1,3 +1,4 @@
 <h2><%= complaint.category.name %></h2>
 <p><%= complaint.address %></p>
 <p><%= complaint.description %></p>
+<p><%= complaint.comments.count %> <%= (complaint.comments.count) == 1 ? 'Like' : 'Likes'%></p>

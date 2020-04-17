@@ -12,6 +12,16 @@
         <h6 class="card-subtitle mb-2 text-muted"><%= @complaint.address%></h6>
         <h6 class="card-subtitle mb-2 text-muted"><%= @complaint.city.name%></h6>
         <p class="card-text"><%= @complaint.description%></p>
+
+        <% pre_like = @complaint.comments.find { |like| like.user_id == current_user.id} %>
+        <% if pre_like %>
+        <%= button_to 'Unlike', complaint_comment_path(@complaint, pre_like), method: :delete %>
+        <% else %>
+        <%= button_to 'Like', complaint_comments_path(@complaint), method: :post %>
+        <% end %>
+
+        <p><%= @complaint.comments.count %> <%= (@complaint.comments.count) == 1 ? 'Like' : 'Likes'%></p>
+
       </div>
 </div>
 
